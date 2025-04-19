@@ -54,8 +54,6 @@ while True:
     while not is_fsr_removed():
         time.sleep(0.1)
 
-    print("Bottle removed... starting 3 second timer.")
-
     removed_time = time.monotonic()
 
     while time.monotonic() - removed_time < 3:
@@ -78,7 +76,7 @@ print("Bottle replaced. Turning off LEDs.")
 pixels.fill((0, 0, 0))  # Off
 
 # === 6. Sleep for 18 hours ===
-SLEEP_TIME_SECONDS = 10
+SLEEP_TIME_SECONDS = 64800
 print(f"Going to sleep for {SLEEP_TIME_SECONDS} seconds...")
 
 time_alarm = alarm.time.TimeAlarm(monotonic_time=time.monotonic() + SLEEP_TIME_SECONDS)
