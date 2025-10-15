@@ -3,11 +3,16 @@ FSR_PIN = "A2"
 NEOPIXEL_PIN = "D3"
 
 # === NEOPIXEL SETTINGS ===
-COLOR = "(255, 0, 255)" # Either (R, G, B) or (R, G, B, W) depending on the color mode.
-BRIGHTNESS = "0.5" # Default brightness of the LEDs. Ranges from 0.0 to 1.0
+
+# Either (R, G, B) or (R, G, B, W) depending on the color mode.\
+COLOR = "(255, 0, 255)" 
+# Default brightness of the LEDs. Ranges from 0.0 to 1.0
+BRIGHTNESS = "0.2" 
 NUM_PIXELS = 24
-PIXEL_ORDER = "GRB" # Likely either GRB or GRBW
+# Likely either GRB or GRBW. If you're not getting the expected color, try
+# RGB or RGBW.
+PIXEL_ORDER = "GRB" 
 
 # === USER SETTINGS ===
-PRESS_DURATION_THRESHOLD = "0.5" # Time (in seconds) the pressure plate must be held down to reset the timer.
+PRESS_DURATION_THRESHOLD = "0.6" # Time (in seconds) the pressure plate must be held down to reset the timer.
 SLEEP_TIME = 64800 # Time (in seconds) the device will sleep before turning light back on. Default is 64800 seconds or 18 hours.

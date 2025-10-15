@@ -4,6 +4,7 @@ import analogio
 import neopixel
 import time
 import alarm
+import microcontroller
 from fade_controller import Fade_Controller
 from press_observer import Press_Duration_Observer
 
@@ -57,3 +58,9 @@ while not fader.is_finished():
 print(f"Going to sleep for {SLEEP_TIME} seconds...")
 time_alarm = alarm.time.TimeAlarm(monotonic_time=time.monotonic() + SLEEP_TIME)
 alarm.exit_and_deep_sleep_until_alarms(time_alarm)
+
+
+# === Hard reset on wake-up ===
+# This line will only execute if somehow deep sleep fails
+microcontroller.reset()
+# Write your code here :-)
