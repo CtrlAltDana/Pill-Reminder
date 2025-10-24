@@ -7,7 +7,7 @@ NEOPIXEL_PIN = "D3"
 # Either (R, G, B) or (R, G, B, W) depending on the color mode.\
 COLOR = "(255, 0, 255)" 
 # Default brightness of the LEDs. Ranges from 0.0 to 1.0
-BRIGHTNESS = "0.2" 
+BRIGHTNESS = "0.1" 
 NUM_PIXELS = 24
 # Likely either GRB or GRBW. If you're not getting the expected color, try
 # RGB or RGBW.
