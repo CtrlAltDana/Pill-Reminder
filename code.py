@@ -32,7 +32,7 @@ fsr = analogio.AnalogIn(getattr(board, os.getenv("FSR_PIN")))
 COLOR = tuple(int(i.strip()) for i in os.getenv("COLOR")[1:-1].split(','))
 
 PRESS_DURATION_THRESHOLD = float(os.getenv("PRESS_DURATION_THRESHOLD"))
-fader = Fade_Controller(pixels, COLOR, duration=PRESS_DURATION_THRESHOLD*700)
+fader = Fade_Controller(pixels, COLOR, duration=PRESS_DURATION_THRESHOLD*1000)
 press_observer = Press_Duration_Observer(PRESS_DURATION_THRESHOLD, FORCE_THRESHOLD)
 
 # === FADE UP NEOPIXELS === 
@@ -67,6 +67,11 @@ while not press_observer.duration_passed():
         fader.fade_down()
     else:
         fader.fade_up()
+    time.sleep(.01)
+
+# === FINISH FADING DOWN LEDS ===
+while not fader.is_finished():
+    fader.fade_down()
     time.sleep(.01)
 
 # === ENTER SLEEP ===
