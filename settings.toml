@@ -14,5 +14,5 @@ NUM_PIXELS = 24
 PIXEL_ORDER = "GRB" 
 
 # === USER SETTINGS ===
-PRESS_DURATION_THRESHOLD = "0.6" # Time (in seconds) the pressure plate must be held down to reset the timer.
+PRESS_DURATION_THRESHOLD = "0.5" # Time (in seconds) the pressure plate must be held down to reset the timer.
 SLEEP_TIME = 64800 # Time (in seconds) the device will sleep before turning light back on. Default is 64800 seconds or 18 hours.

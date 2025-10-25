@@ -45,14 +45,14 @@ filtered_value = fsr.value
 while True:
     while filtered_value > LOW_FORCE_THRESHOLD:
         filtered_value = smooth(fsr.value, filtered_value, ALPHA)
-        time.sleep(0.01)
+        time.sleep(.1)
     start_time = time.monotonic()
     
     while time.monotonic() - start_time < 1:
         filtered_value = smooth(fsr.value, filtered_value, ALPHA)
         if filtered_value > LOW_FORCE_THRESHOLD:  # if bottle returned too quickly
             break # restart removal check
-        time.sleep(.01)
+        time.sleep(.1)
     else:
         print("FSR value remained low for long enough. Proceeding.")
         break
@@ -61,7 +61,6 @@ while True:
 #  === WAIT FOR SENSOR TO BE PRESSED ===
 while not press_observer.duration_passed():
     filtered_value = smooth(fsr.value, filtered_value, ALPHA)
-    #print((filtered_value,))
     press_observer.update(filtered_value)
     if press_observer.press_started:
         fader.fade_down()

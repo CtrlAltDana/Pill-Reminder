@@ -10,7 +10,7 @@ class Fade_Controller:
         self.refresh = refresh  # time between refreshes in ms
         self.color = color
         self.increment = get_increment(color, refresh, duration)
-        self.duration = duration
+        self.duration = duration # how long to it takes to go from min to max brightness in ms (or vice versa)
         self.prev_update_time = 0
 
     def _refresh_threhold_passed(self):
