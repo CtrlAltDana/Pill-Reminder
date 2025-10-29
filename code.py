@@ -10,7 +10,7 @@ from press_observer import Press_Duration_Observer
 from smooth import smooth
 
 # === SETUP CONSTANTS ===
-SLEEP_TIME = os.getenv("SLEEP_TIME")
+SLEEP_TIME = float(os.getenv("SLEEP_TIME")) * 3600
 ALPHA = 0.5  # FSR signal smoothing factor
 FORCE_THRESHOLD = 63000
 LOW_FORCE_THRESHOLD = 32000
